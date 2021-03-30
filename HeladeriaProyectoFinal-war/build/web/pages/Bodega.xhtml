@@ -1,0 +1,52 @@
+<ui:composition
+    template="../template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:b="http://bootsfaces.net/ui">
+        
+    <ui:define name="content">
+        <h:form>
+ 
+                <p:panel header="Numero">
+                    <p:dataTable value="#{productoControl.listaproduto}" var="pr">
+                        <p:column headerText="ID" >
+                            <p:outputLabel value="#{pr.idproducto}"/>
+                </p:column>
+                <p:column headerText="Nombres" >
+                    <p:outputLabel value="#{pr.nombres}"/>
+                </p:column>
+                <p:column headerText="Precio" >
+                    <p:outputLabel value="#{pr.precio}"/>
+                </p:column>
+                <p:column headerText="Estado" >
+                    <p:outputLabel value="#{pr.estado}"/>
+                </p:column>
+                        <p:column headerText="Actualizar">
+                            <p:commandButton type="button" value="Actualizar" styleClass="rounded-button"/>
+                        </p:column>
+            </p:dataTable>
+        </p:panel>
+       
+            <p:panelGrid columns="2">
+        
+     <p:commandButton  value="Inicio" action="../index.html" />
+    <p:commandButton  value="Clientes" action="cliente.xhtml" />
+    </p:panelGrid>
+            
+            <b:panel>
+                <h1>
+                   Helados Disponibles 
+                </h1>
+                
+            </b:panel>
+            
+            
+        </h:form>
+    </ui:define>
+    
+    
+    
+</ui:composition>
